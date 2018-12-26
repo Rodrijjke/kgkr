@@ -17,11 +17,12 @@ namespace CGLab1
             var angleAmplitude = Math.PI * 2 / 3;
 
             var threadRotationDelta = Math.PI / 20.0;
-            var pendulumRotationDelta = Math.PI / 100.0;
+            var pendulumRotationDelta = Math.PI / 30.0;
 
             while (curState.ThreadRotation < angleAmplitude)
             {
-                curState.ThreadRotation += speed * Math.PI / 100;
+                curState.ThreadRotation += speed * threadRotationDelta;
+                curState.PendulumRotation += speed * pendulumRotationDelta;
                 yield return curState;
             }
         }
