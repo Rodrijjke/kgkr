@@ -19,6 +19,9 @@ namespace CGLab1.Components
         private int vertexArray;
         private readonly PrimitivesDrawer drawer;
 
+        private int r, g, b;
+        private bool rUp, gUp, bUp;
+
         public MainWindow()
             : base(820,
                 560,
@@ -30,6 +33,9 @@ namespace CGLab1.Components
                 0,
                 GraphicsContextFlags.Default)
         {
+            r = 255;
+            g = 122;
+            b = 35;
             Title += ": OpenGL Version: " + GL.GetString(StringName.Version);
 
             drawer = new PrimitivesDrawer(Width, Height);
@@ -56,7 +62,7 @@ namespace CGLab1.Components
             base.Exit();
         }
 
-        private int CompileShaders()
+        private static int CompileShaders()
         {
             var vertexShader = GL.CreateShader(ShaderType.VertexShader);
             GL.ShaderSource(vertexShader, File.ReadAllText(@"Shaders\vertexShader.vert"));
@@ -80,7 +86,7 @@ namespace CGLab1.Components
 
         protected override void OnRenderFrame(FrameEventArgs e)
         {
-            GL.ClearColor(Color4.Black);
+            GL.ClearColor(GetNewBackColor());
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
             GL.UseProgram(program);
@@ -95,6 +101,37 @@ namespace CGLab1.Components
             SwapBuffers();
         }
 
+        private Color4 GetNewBackColor()
+        {
+            if (r > 254)
+                rUp = false;
+            if (r < 1)
+                rUp = true;
+            if (rUp)
+                r += 1;
+            else
+                r -= 1;
+
+            if (g > 254)
+                gUp = false;
+            if (g < 1)
+                gUp = true;
+            if (gUp)
+                g += 1;
+            else
+                g -= 1;
+
+            if (b > 254)
+                bUp = false;
+            if (b < 1)
+                bUp = true;
+            if (bUp)
+                b += 1;
+            else
+                b -= 1;
+
+            return new Color4((byte) r, (byte) g, (byte) b, 255);
+        }
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
             HandleKeyboard();
