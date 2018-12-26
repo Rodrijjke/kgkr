@@ -8,9 +8,22 @@ namespace CGLab1
 {
     public static class PendulumAnimator
     {
-        public static IEnumerable<PendulumState> GetNextPendulumStates()
+        public static IEnumerable<PendulumState> EnumeratePendulumStates(double speed)
         {
+            var curState = new PendulumState(200, 0, 0);
 
+            yield return curState;
+
+            var angleAmplitude = Math.PI * 2 / 3;
+
+            var threadRotationDelta = Math.PI / 20.0;
+            var pendulumRotationDelta = Math.PI / 100.0;
+
+            while (curState.ThreadRotation < angleAmplitude)
+            {
+                curState.ThreadRotation += speed * Math.PI / 100;
+                yield return curState;
+            }
         }
     }
 }
