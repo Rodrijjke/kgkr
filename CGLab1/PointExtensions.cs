@@ -34,10 +34,10 @@ namespace CGLab1
             // Для начала перенесём точку в новую систему координат с началом в rotatationBase:
             var displacedPoint = source.Substract(rotatationBase);
 
-            // Поворот осуществляется путём умножения исходной точки на матрицу поворота:
+            // Поворот осуществляется путём умножения матрицы поворота на исходную точку:
             // [x']   [ cos(a)  -sin(a)]   [x]
             // [  ] = [                ] X [ ]
-            // [y']   [-sin(a)   cos(a)]   [y
+            // [y']   [-sin(a)   cos(a)]   [y]
 
             var newX = displacedPoint.X * Math.Cos(radAngle) - displacedPoint.Y * Math.Sin(radAngle);
             var newY = displacedPoint.X * Math.Sin(radAngle) + displacedPoint.Y * Math.Cos(radAngle);
