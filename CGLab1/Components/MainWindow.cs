@@ -17,6 +17,7 @@ namespace CGLab1.Components
         private const string title = "Курсовая работа";
         private int program;
         private int vertexArray;
+        private readonly PrimitivesDrawer drawer;
 
         public MainWindow()
             : base(820,
@@ -30,6 +31,8 @@ namespace CGLab1.Components
                 GraphicsContextFlags.Default)
         {
             Title += ": OpenGL Version: " + GL.GetString(StringName.Version);
+
+            drawer = new PrimitivesDrawer(Width, Height);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -83,57 +86,13 @@ namespace CGLab1.Components
             GL.UseProgram(program);
 
             // Рисование тут:
-            DrawLine(new Point(0, 0), new Point(100, 200), 5, Color4.White);
+            drawer.DrawLine(new Point(0, 0), new Point(100, 200), 5, Color4.White);
             
             var point = new Point(100, 50);
             var rotatedPoint = point.Rotate(new Point(-100, 0), Math.PI / 2);
-            DrawPoint(rotatedPoint.X, rotatedPoint.Y, 5, Color4.Blue);
+            drawer.DrawPoint(rotatedPoint.X, rotatedPoint.Y, 5, Color4.Blue);
 
             SwapBuffers();
-        }
-
-        private void DrawLine(Point start, Point end, int width, Color4 color)
-        {
-            var points = GetPointsOfLine(start, end);
-            foreach (var point in points)
-                DrawPoint(point.X, point.Y, width, color);
-        }
-
-        private static IEnumerable<Point> GetPointsOfLine(Point start, Point end)
-        {
-            var steep = false;
-            if (Math.Abs(start.X - end.X) < Math.Abs(start.Y - end.Y))
-            {
-                start = start.Invert();
-                end = end.Invert();
-                steep = true;
-            }
-            if (start.X > end.X)
-            {
-                var temp = start;
-                start = end;
-                end = temp;
-            }
-
-            for (var x = start.X; x <= end.X; x++)
-            {
-                var t = (x - start.X) / (float)(end.X - start.X);
-                var y = (int)Math.Round(start.Y * (1.0f - t) + end.Y * t);
-                if (steep)
-                    yield return new Point(y, x);
-                else
-                    yield return new Point(x, y);
-            }
-        }
-
-        private void DrawPoint(float x, float y, float size, Color4 color)
-        {
-            var position = new Vector2(x / Width, y / Height);
-            GL.VertexAttrib2(0, position);
-            var colorArr = new[] { color.R, color.G, color.B, color.A };
-            GL.VertexAttrib4(1, colorArr);
-            GL.PointSize(size);
-            GL.DrawArrays(PrimitiveType.Points, 0, 1);
         }
 
         protected override void OnUpdateFrame(FrameEventArgs e)
