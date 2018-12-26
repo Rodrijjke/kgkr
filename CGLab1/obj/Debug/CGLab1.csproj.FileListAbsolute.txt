@@ -56,3 +56,17 @@ D:\PROGRAMMING\C#\Projects\CGLab4\CGLab1\obj\Debug\CGLab1.csproj.GenerateResourc
 D:\PROGRAMMING\C#\Projects\CGLab4\CGLab1\obj\Debug\CGLab1.csproj.CoreCompileInputs.cache
 D:\PROGRAMMING\C#\Projects\CGLab4\CGLab1\obj\Debug\CGLab1.exe
 D:\PROGRAMMING\C#\Projects\CGLab4\CGLab1\obj\Debug\CGLab1.pdb
+D:\REPOS\kgkr\CGLab1\bin\Debug\Shaders\FragmentShader.frag
+D:\REPOS\kgkr\CGLab1\bin\Debug\Shaders\VertexShader.vert
+D:\REPOS\kgkr\CGLab1\bin\Debug\CGLab1.exe.config
+D:\REPOS\kgkr\CGLab1\bin\Debug\CGLab1.exe
+D:\REPOS\kgkr\CGLab1\bin\Debug\CGLab1.pdb
+D:\REPOS\kgkr\CGLab1\bin\Debug\OpenTK.dll
+D:\REPOS\kgkr\CGLab1\bin\Debug\OpenTK.pdb
+D:\REPOS\kgkr\CGLab1\bin\Debug\OpenTK.xml
+D:\REPOS\kgkr\CGLab1\obj\Debug\CGLab1.csprojResolveAssemblyReference.cache
+D:\REPOS\kgkr\CGLab1\obj\Debug\CGLab1.Properties.Resources.resources
+D:\REPOS\kgkr\CGLab1\obj\Debug\CGLab1.csproj.GenerateResource.Cache
+D:\REPOS\kgkr\CGLab1\obj\Debug\CGLab1.csproj.CoreCompileInputs.cache
+D:\REPOS\kgkr\CGLab1\obj\Debug\CGLab1.exe
+D:\REPOS\kgkr\CGLab1\obj\Debug\CGLab1.pdb

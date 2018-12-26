@@ -84,6 +84,10 @@ namespace CGLab1.Components
 
             // Рисование тут:
             DrawLine(new Point(0, 0), new Point(100, 200), 5, Color4.White);
+            
+            var point = new Point(100, 50);
+            var rotatedPoint = point.Rotate(new Point(-100, 0), Math.PI / 2);
+            DrawPoint(rotatedPoint.X, rotatedPoint.Y, 5, Color4.Blue);
 
             SwapBuffers();
         }
