@@ -1,0 +1,13 @@
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\bin\Release\Shaders\FragmentShader.frag
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\bin\Release\Shaders\VertexShader.vert
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\bin\Release\CGLab1.exe.config
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\bin\Release\CGLab1.exe
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\bin\Release\CGLab1.pdb
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\bin\Release\OpenTK.dll
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\bin\Release\OpenTK.pdb
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\bin\Release\OpenTK.xml
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\obj\Release\CGLab1.Properties.Resources.resources
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\obj\Release\CGLab1.csproj.GenerateResource.Cache
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\obj\Release\CGLab1.csproj.CoreCompileInputs.cache
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\obj\Release\CGLab1.exe
+D:\PROGRAMMING\C#\Projects\CGLab1\CGLab1\obj\Release\CGLab1.pdb
