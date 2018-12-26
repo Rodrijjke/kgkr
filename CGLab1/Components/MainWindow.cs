@@ -19,14 +19,14 @@ namespace CGLab1.Components
         private int vertexArray;
 
         public MainWindow()
-            : base(820, 
-                560, 
+            : base(820,
+                560,
                 GraphicsMode.Default,
-                title,  
+                title,
                 GameWindowFlags.Default,
                 DisplayDevice.Default,
-                4, 
-                0, 
+                4,
+                0,
                 GraphicsContextFlags.Default)
         {
             Title += ": OpenGL Version: " + GL.GetString(StringName.Version);
@@ -83,18 +83,16 @@ namespace CGLab1.Components
             GL.UseProgram(program);
 
             // Рисование тут:
-            DrawLine(new Point(0, 0), new Point(100, 200), Color4.White);
+            DrawLine(new Point(0, 0), new Point(100, 200), 5, Color4.White);
 
             SwapBuffers();
         }
 
-        private void DrawLine(Point start, Point end, Color4 color)
+        private void DrawLine(Point start, Point end, int width, Color4 color)
         {
             var points = GetPointsOfLine(start, end);
             foreach (var point in points)
-            {
-                DrawPoint(point.X, point.Y, 1, color);
-            }
+                DrawPoint(point.X, point.Y, width, color);
         }
 
         private static IEnumerable<Point> GetPointsOfLine(Point start, Point end)
@@ -128,7 +126,7 @@ namespace CGLab1.Components
         {
             var position = new Vector2(x / Width, y / Height);
             GL.VertexAttrib2(0, position);
-            var colorArr = new[] {color.R, color.G, color.B, color.A};
+            var colorArr = new[] { color.R, color.G, color.B, color.A };
             GL.VertexAttrib4(1, colorArr);
             GL.PointSize(size);
             GL.DrawArrays(PrimitiveType.Points, 0, 1);
