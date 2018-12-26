@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace CGLab1
 {
-    public static class PendulumDrawer
+    public class PendulumDrawer
     {
+        private readonly PrimitivesDrawer drawer;
 
+        public PendulumDrawer(PrimitivesDrawer drawer)
+        {
+            this.drawer = drawer;
+        }
+
+        public void DrawNextFrame()
+        {
+
+        }
     }
 }
